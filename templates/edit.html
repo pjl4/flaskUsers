@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Edit</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <h1 class="text-center">Edit page</h1>
+        <form action="/users/{{users['id']}}" method="post">
+            <div class="form-group">
+                <label for="first_name" class="col-sm-2">First Name:</label>
+                <input type="text" name="first_name" id="first_name" value={{users['first_name']}}>
+            </div>
+            <div class="form-group">
+                <label for="last_name" class="col-sm-2">Last Name:</label>
+                <input type="text" name="last_name" id="last_name" value={{users['last_name']}}>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-2">Email:</label>
+                <input type="text" name="email" id="email" value={{users['email']}}>
+            </div>
+            <input type="hidden" name="id" value={{users['id']}}>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+
+        </form>
+        <a href="/users/{{users['id']}}" >Show    |    </a>
+        <a href="/users" >Go back</a>
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
